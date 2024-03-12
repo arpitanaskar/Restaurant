@@ -1,7 +1,20 @@
 import Input from "../../UI/Input";
 import classes from "./MealItemForm.module.css";
+import { useState } from "react";
 
 const MealItemForm = (props) => {
+  const [amount, setAmount] = useState(1);
+
+  const amountChangeHandler = (event) => {
+    setAmount(event.target.value);
+    // console.log(event.target.value);
+  };
+
+  const addItemHandler = (event) => {
+    event.preventDefault();
+    props.onAddItem(+amount);
+  };
+
   return (
     <form className={classes.form}>
       <Input
@@ -13,9 +26,10 @@ const MealItemForm = (props) => {
           max: 5,
           step: 1,
           defaultValue: 1,
+          onChange: amountChangeHandler,
         }}
       />
-      <button> + Add</button>
+      <button onClick={addItemHandler}> + Add</button>
     </form>
   );
 };
