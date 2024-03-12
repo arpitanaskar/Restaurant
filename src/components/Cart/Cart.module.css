@@ -44,3 +44,41 @@
   background-color: #8a2b06;
   color: white;
 }
+
+.list-items {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  border-bottom: solid 2px #8a2b06;
+  margin: 10px 15px;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.price {
+  margin-top: 10px;
+  font-size: smaller;
+  font-weight: bold;
+  color: #8a2b06;
+}
+
+.addone {
+  display: flex;
+  justify-content: space-between;
+  width: 14rem;
+  /* border: solid 1px black; */
+}
+
+.amount {
+  border: solid 1px rgb(163, 156, 156);
+  height: 2rem;
+  width: 2.5rem;
+  padding-left: 0.5rem;
+  border-radius: 0.4rem;
+  margin-top: 1.8rem;
+  font-weight: bold;
+  color: #5a1a01;
+}

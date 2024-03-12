@@ -16,9 +16,7 @@ const MealItem = (props) => {
       price: props.price,
     };
 
-    console.log(typeof props.price);
     cart.addItem(item);
-    console.log(cart.items);
   };
 
   return (

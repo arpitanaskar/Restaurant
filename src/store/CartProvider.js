@@ -23,7 +23,23 @@ const CartProvider = (props) => {
     });
   };
 
-  const removeItemFromCartHandler = (id) => {};
+  const removeItemFromCartHandler = (id) => {
+    const itemToRemove = cartItems.find((item) => item.id === id);
+
+    if (itemToRemove.amount > 1) {
+      const updatedCartItems = cartItems.map((item) =>
+        item.id === id ? { ...item, amount: item.amount - 1 } : item
+      );
+      setCartItems(updatedCartItems);
+      console.log(updatedCartItems);
+    }
+
+    if (itemToRemove.amount === 1) {
+      const updatedCartItems = cartItems.filter((item) => item.id !== id);
+
+      setCartItems(updatedCartItems);
+    }
+  };
 
   useEffect(() => {
     const total = cartItems.reduce(
